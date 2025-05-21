@@ -109,6 +109,20 @@
             color: #3498db;
             margin-left: 5px;
         }
+        #showAllBtn, #hideAllBtn {
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: opacity 0.3s;
+}
+
+#showAllBtn:hover, #hideAllBtn:hover {
+    opacity: 0.8;
+}
     </style>
 </head>
 <body>
@@ -549,7 +563,10 @@
         
         <div id="result" class="result"></div>
     </div>
-
+<div style="text-align: center; margin: 20px 0;">
+    <button id="showAllBtn" type="button" onclick="showAllCorrectAnswers()" style="background-color: #17a2b8;">عرض كل الإجابات الصحيحة</button>
+    <button id="hideAllBtn" type="button" onclick="hideAllCorrectAnswers()" style="background-color: #6c757d; display: none;">إخفاء كل الإجابات</button>
+</div>
     <script>
         function checkAnswers() {
             const correctAnswers = {
@@ -613,6 +630,30 @@
             // التمرير إلى النتيجة
             resultDiv.scrollIntoView({ behavior: 'smooth' });
            }
-    </script>
+
+    // دالة لعرض جميع الإجابات الصحيحة
+    function showAllCorrectAnswers() {
+        // إظهار جميع الإجابات الصحيحة
+        document.querySelectorAll('.correct-answer').forEach(el => {
+            el.classList.add('show-answer');
+        });
+        
+        // إخفاء زر "عرض كل الإجابات" وإظهار زر "إخفاء الإجابات"
+        document.getElementById('showAllBtn').style.display = 'none';
+        document.getElementById('hideAllBtn').style.display = 'block';
+    }
+    
+    // دالة لإخفاء جميع الإجابات الصحيحة
+    function hideAllCorrectAnswers() {
+        // إخفاء جميع الإجابات الصحيحة
+        document.querySelectorAll('.correct-answer').forEach(el => {
+            el.classList.remove('show-answer');
+        });
+        
+        // إظهار زر "عرض كل الإجابات" وإخفاء زر "إخفاء الإجابات"
+        document.getElementById('showAllBtn').style.display = 'block';
+        document.getElementById('hideAllBtn').style.display = 'none';
+    }
+</script>
 </body>
 </html>
