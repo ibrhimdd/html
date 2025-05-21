@@ -559,14 +559,17 @@
             </div>
             
             <button type="button" onclick="checkAnswers()">تصحيح الإجابات</button>
-        </form>
-        
-        <div id="result" class="result"></div>
-    </div>
 <div style="text-align: center; margin: 20px 0;">
     <button id="showAllBtn" type="button" onclick="showAllCorrectAnswers()" style="background-color: #17a2b8;">عرض كل الإجابات الصحيحة</button>
     <button id="hideAllBtn" type="button" onclick="hideAllCorrectAnswers()" style="background-color: #6c757d; display: none;">إخفاء كل الإجابات</button>
 </div>
+
+            
+        </form>
+        
+        <div id="result" class="result"></div>
+    </div>
+
     <script>
         function checkAnswers() {
             const correctAnswers = {
