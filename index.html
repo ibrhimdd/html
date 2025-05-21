@@ -1,0 +1,618 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار HTML شامل</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 15px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section-title {
+            color: #3498db;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .question {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        .question p {
+            font-weight: bold;
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .options {
+            margin-top: 10px;
+        }
+        label {
+            display: block;
+            margin: 8px 0;
+            padding: 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        label:hover {
+            background-color: #e8f4fc;
+        }
+        button {
+            display: block;
+            margin: 30px auto;
+            padding: 12px 25px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .passed {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .failed {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .correct-answer {
+            color: #28a745;
+            font-weight: bold;
+            margin-top: 10px;
+            padding: 8px;
+            background-color: #e8f5e9;
+            border-radius: 4px;
+            display: none;
+        }
+        .show-answer {
+            display: block;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #3498db;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>اختبار HTML شامل</h1>
+        
+        <form id="quizForm">
+            <div class="section">
+                <h2 class="section-title">الجزء الأول: اختيار من متعدد</h2>
+                
+                <!-- السؤال 1 -->
+                <div class="question">
+                    <p><span class="question-number">1</span>. ما وظيفة الوسم &lt;img&gt; في HTML؟</p>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="a"> أ) عرض فيديو</label>
+                        <label><input type="radio" name="q1" value="b"> ب) عرض صورة</label>
+                        <label><input type="radio" name="q1" value="c"> ج) تنسيق النص</label>
+                        <label><input type="radio" name="q1" value="d"> د) إدراج صوت</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: ب) عرض صورة</div>
+                </div>
+                
+                <!-- السؤال 2 -->
+                <div class="question">
+                    <p><span class="question-number">2</span>. أي وسم يُستخدم لإضافة خط فاصل أفقي في الصفحة؟</p>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="a"> أ) &lt;br&gt;</label>
+                        <label><input type="radio" name="q2" value="b"> ب) &lt;hr&gt;</label>
+                        <label><input type="radio" name="q2" value="c"> ج) &lt;line&gt;</label>
+                        <label><input type="radio" name="q2" value="d"> د) &lt;div&gt;</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: ب) &lt;hr&gt;</div>
+                </div>
+                
+                <!-- السؤال 3 -->
+                <div class="question">
+                    <p><span class="question-number">3</span>. ما هو الوسم الصحيح لكتابة نص داخل الفقرة؟</p>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="a"> أ) &lt;para&gt;</label>
+                        <label><input type="radio" name="q3" value="b"> ب) &lt;p&gt;</label>
+                        <label><input type="radio" name="q3" value="c"> ج) &lt;text&gt;</label>
+                        <label><input type="radio" name="q3" value="d"> د) &lt;h&gt;</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: ب) &lt;p&gt;</div>
+                </div>
+                
+                <!-- السؤال 4 -->
+                <div class="question">
+                    <p><span class="question-number">4</span>. ما الوسم المستخدم لعرض نص مائل (Italic)؟</p>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="a"> أ) &lt;b&gt;</label>
+                        <label><input type="radio" name="q4" value="b"> ب) &lt;i&gt;</label>
+                        <label><input type="radio" name="q4" value="c"> ج) &lt;strong&gt;</label>
+                        <label><input type="radio" name="q4" value="d"> د) &lt;u&gt;</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: ب) &lt;i&gt;</div>
+                </div>
+                
+                <!-- السؤال 5 -->
+                <div class="question">
+                    <p><span class="question-number">5</span>. أي وسم يُستخدم لتشغيل ملف صوتي؟</p>
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="a"> أ) &lt;video&gt;</label>
+                        <label><input type="radio" name="q5" value="b"> ب) &lt;mp3&gt;</label>
+                        <label><input type="radio" name="q5" value="c"> ج) &lt;audio&gt;</label>
+                        <label><input type="radio" name="q5" value="d"> د) &lt;sound&gt;</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: ج) &lt;audio&gt;</div>
+                </div>
+                
+                <!-- السؤال 6 -->
+                <div class="question">
+                    <p><span class="question-number">6</span>. أي من التالي يُظهر أدوات التحكم عند تشغيل ملف صوتي أو فيديو؟</p>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="a"> أ) controls="false"</label>
+                        <label><input type="radio" name="q6" value="b"> ب) autoplay</label>
+                        <label><input type="radio" name="q6" value="c"> ج) muted</label>
+                        <label><input type="radio" name="q6" value="d"> د) controls</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: د) controls</div>
+                </div>
+                
+                <!-- السؤال 7 -->
+                <div class="question">
+                    <p><span class="question-number">7</span>. ما الفرق بين &lt;b&gt; و &lt;strong&gt;؟</p>
+                    <div class="options">
+                        <label><input type="radio" name="q7" value="a"> أ) لا يوجد فرق</label>
+                        <label><input type="radio" name="q7" value="b"> ب) &lt;b&gt; تعني غامق و &lt;strong&gt; تعني مائل</label>
+                        <label><input type="radio" name="q7" value="c"> ج) &lt;b&gt; لتضخيم الشكل و &lt;strong&gt; للدلالة على الأهمية</label>
+                        <label><input type="radio" name="q7" value="d"> د) &lt;strong&gt; لخط تحته</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: ج) &lt;b&gt; لتضخيم الشكل و &lt;strong&gt; للدلالة على الأهمية</div>
+                </div>
+                
+                <!-- السؤال 8 -->
+                <div class="question">
+                    <p><span class="question-number">8</span>. ما التاج المناسب لإظهار نص بحجم صغير؟</p>
+                    <div class="options">
+                        <label><input type="radio" name="q8" value="a"> أ) &lt;sub&gt;</label>
+                        <label><input type="radio" name="q8" value="b"> ب) &lt;small&gt;</label>
+                        <label><input type="radio" name="q8" value="c"> ج) &lt;u&gt;</label>
+                        <label><input type="radio" name="q8" value="d"> د) &lt;short&gt;</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: ب) &lt;small&gt;</div>
+                </div>
+                
+                <!-- السؤال 9 -->
+                <div class="question">
+                    <p><span class="question-number">9</span>. ما وظيفة الوسم &lt;mark&gt;؟</p>
+                    <div class="options">
+                        <label><input type="radio" name="q9" value="a"> أ) جعله عريض</label>
+                        <label><input type="radio" name="q9" value="b"> ب) جعله مائل</label>
+                        <label><input type="radio" name="q9" value="c"> ج) تسطير النص</label>
+                        <label><input type="radio" name="q9" value="d"> د) تمييز النص بلون</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: د) تمييز النص بلون</div>
+                </div>
+                
+                <!-- السؤال 10 -->
+                <div class="question">
+                    <p><span class="question-number">10</span>. أين يتم وضع الوسم &lt;head&gt; في الصفحة؟</p>
+                    <div class="options">
+                        <label><input type="radio" name="q10" value="a"> أ) داخل &lt;body&gt;</label>
+                        <label><input type="radio" name="q10" value="b"> ب) بعد &lt;html&gt; مباشرة</label>
+                        <label><input type="radio" name="q10" value="c"> ج) في آخر الصفحة</label>
+                        <label><input type="radio" name="q10" value="d"> د) ليس له مكان محدد</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: ب) بعد &lt;html&gt; مباشرة</div>
+                </div>
+                
+                <!-- السؤال 11 -->
+                <div class="question">
+                    <p><span class="question-number">11</span>. ما التاج المناسب لكتابة نص بأس أعلى السطر؟</p>
+                    <div class="options">
+                        <label><input type="radio" name="q11" value="a"> أ) &lt;sub&gt;</label>
+                        <label><input type="radio" name="q11" value="b"> ب) &lt;mark&gt;</label>
+                        <label><input type="radio" name="q11" value="c"> ج) &lt;sup&gt;</label>
+                        <label><input type="radio" name="q11" value="d"> د) &lt;i&gt;</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: ج) &lt;sup&gt;</div>
+                </div>
+                
+                <!-- السؤال 12 -->
+                <div class="question">
+                    <p><span class="question-number">12</span>. أي من التالي يُستخدم لكتابة نص أسفل السطر؟</p>
+                    <div class="options">
+                        <label><input type="radio" name="q12" value="a"> أ) &lt;sup&gt;</label>
+                        <label><input type="radio" name="q12" value="b"> ب) &lt;sub&gt;</label>
+                        <label><input type="radio" name="q12" value="c"> ج) &lt;small&gt;</label>
+                        <label><input type="radio" name="q12" value="d"> د) &lt;down&gt;</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: ب) &lt;sub&gt;</div>
+                </div>
+                
+                <!-- السؤال 13 -->
+                <div class="question">
+                    <p><span class="question-number">13</span>. التاج &lt;video&gt; يُستخدم لـ...</p>
+                    <div class="options">
+                        <label><input type="radio" name="q13" value="a"> أ) تشغيل ملفات صوتية</label>
+                        <label><input type="radio" name="q13" value="b"> ب) عرض صور</label>
+                        <label><input type="radio" name="q13" value="c"> ج) عرض مقاطع فيديو</label>
+                        <label><input type="radio" name="q13" value="d"> د) إدراج روابط</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: ج) عرض مقاطع فيديو</div>
+                </div>
+                
+                <!-- السؤال 14 -->
+                <div class="question">
+                    <p><span class="question-number">14</span>. أي وسم يُستخدم لوضع أدوات التحكم داخل مشغل الفيديو أو الصوت؟</p>
+                    <div class="options">
+                        <label><input type="radio" name="q14" value="a"> أ) autoplay</label>
+                        <label><input type="radio" name="q14" value="b"> ب) muted</label>
+                        <label><input type="radio" name="q14" value="c"> ج) controls</label>
+                        <label><input type="radio" name="q14" value="d"> د) loop</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: ج) controls</div>
+                </div>
+                
+                <!-- السؤال 15 -->
+                <div class="question">
+                    <p><span class="question-number">15</span>. أي من التالي يُستخدم لكتابة عنوان رئيسي في الصفحة؟</p>
+                    <div class="options">
+                        <label><input type="radio" name="q15" value="a"> أ) &lt;title&gt;</label>
+                        <label><input type="radio" name="q15" value="b"> ب) &lt;h1&gt;</label>
+                        <label><input type="radio" name="q15" value="c"> ج) &lt;head&gt;</label>
+                        <label><input type="radio" name="q15" value="d"> د) &lt;p&gt;</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: ب) &lt;h1&gt;</div>
+                </div>
+                
+                <!-- السؤال 16 -->
+                <div class="question">
+                    <p><span class="question-number">16</span>. ما التاج المسؤول عن الجزء الظاهر من الصفحة للمستخدم؟</p>
+                    <div class="options">
+                        <label><input type="radio" name="q16" value="a"> أ) &lt;head&gt;</label>
+                        <label><input type="radio" name="q16" value="b"> ب) &lt;meta&gt;</label>
+                        <label><input type="radio" name="q16" value="c"> ج) &lt;html&gt;</label>
+                        <label><input type="radio" name="q16" value="d"> د) &lt;body&gt;</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: د) &lt;body&gt;</div>
+                </div>
+                
+                <!-- السؤال 17 -->
+                <div class="question">
+                    <p><span class="question-number">17</span>. لو عايز تكتب نص ويظهر بشكل مسطّر، تستخدم أنهي وسم؟</p>
+                    <div class="options">
+                        <label><input type="radio" name="q17" value="a"> أ) &lt;i&gt;</label>
+                        <label><input type="radio" name="q17" value="b"> ب) &lt;u&gt;</label>
+                        <label><input type="radio" name="q17" value="c"> ج) &lt;b&gt;</label>
+                        <label><input type="radio" name="q17" value="d"> د) &lt;hr&gt;</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: ب) &lt;u&gt;</div>
+                </div>
+                
+                <!-- السؤال 18 -->
+                <div class="question">
+                    <p><span class="question-number">18</span>. ما الفرق بين &lt;br&gt; و &lt;hr&gt;؟</p>
+                    <div class="options">
+                        <label><input type="radio" name="q18" value="a"> أ) مفيش فرق</label>
+                        <label><input type="radio" name="q18" value="b"> ب) &lt;br&gt; ينزل سطر، و &lt;hr&gt; يعمل خط فاصل</label>
+                        <label><input type="radio" name="q18" value="c"> ج) &lt;br&gt; يعرض صورة و &lt;hr&gt; يعرض فيديو</label>
+                        <label><input type="radio" name="q18" value="d"> د) الاتنين بيضيفوا صوت</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: ب) &lt;br&gt; ينزل سطر، و &lt;hr&gt; يعمل خط فاصل</div>
+                </div>
+                
+                <!-- السؤال 19 -->
+                <div class="question">
+                    <p><span class="question-number">19</span>. أي من التالي لا يُستخدم لتنسيق النص؟</p>
+                    <div class="options">
+                        <label><input type="radio" name="q19" value="a"> أ) &lt;b&gt;</label>
+                        <label><input type="radio" name="q19" value="b"> ب) &lt;i&gt;</label>
+                        <label><input type="radio" name="q19" value="c"> ج) &lt;sub&gt;</label>
+                        <label><input type="radio" name="q19" value="d"> د) &lt;audio&gt;</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: د) &lt;audio&gt;</div>
+                </div>
+                
+                <!-- السؤال 20 -->
+                <div class="question">
+                    <p><span class="question-number">20</span>. أي من التاجات دي يُكتب داخل &lt;head&gt;؟</p>
+                    <div class="options">
+                        <label><input type="radio" name="q20" value="a"> أ) &lt;h1&gt;</label>
+                        <label><input type="radio" name="q20" value="b"> ب) &lt;p&gt;</label>
+                        <label><input type="radio" name="q20" value="c"> ج) &lt;title&gt;</label>
+                        <label><input type="radio" name="q20" value="d"> د) &lt;img&gt;</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: ج) &lt;title&gt;</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">الجزء الثاني: صح أو خطأ</h2>
+                
+                <!-- السؤال 21 -->
+                <div class="question">
+                    <p><span class="question-number">21</span>. الوسم &lt;u&gt; يُستخدم لتسطير النص.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q21" value="true"> صح</label>
+                        <label><input type="radio" name="q21" value="false"> خطأ</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: صح</div>
+                </div>
+                
+                <!-- السؤال 22 -->
+                <div class="question">
+                    <p><span class="question-number">22</span>. الوسم &lt;sup&gt; يُستخدم لكتابة النص أسفل السطر.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q22" value="true"> صح</label>
+                        <label><input type="radio" name="q22" value="false"> خطأ</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: خطأ (هو لرفع النص لأعلى، أما &lt;sub&gt; لأسفل)</div>
+                </div>
+                
+                <!-- السؤال 23 -->
+                <div class="question">
+                    <p><span class="question-number">23</span>. وسم &lt;h&gt; يُستخدم لكتابة العناوين بجميع المستويات من 1 إلى 6.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q23" value="true"> صح</label>
+                        <label><input type="radio" name="q23" value="false"> خطأ</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: خطأ (لازم نكتب &lt;h1&gt; إلى &lt;h6&gt;)</div>
+                </div>
+                
+                <!-- السؤال 24 -->
+                <div class="question">
+                    <p><span class="question-number">24</span>. الوسم &lt;br&gt; يُستخدم لنقل النص لسطر جديد.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q24" value="true"> صح</label>
+                        <label><input type="radio" name="q24" value="false"> خطأ</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: صح</div>
+                </div>
+                
+                <!-- السؤال 25 -->
+                <div class="question">
+                    <p><span class="question-number">25</span>. يمكن تشغيل الفيديو باستخدام الوسم &lt;video&gt; فقط بدون تحديد مصدر.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q25" value="true"> صح</label>
+                        <label><input type="radio" name="q25" value="false"> خطأ</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: خطأ (لازم نحدد src أو نكتب &lt;source&gt;)</div>
+                </div>
+                
+                <!-- السؤال 26 -->
+                <div class="question">
+                    <p><span class="question-number">26</span>. وسم &lt;body&gt; يحتوي على كل ما يظهر في صفحة الويب.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q26" value="true"> صح</label>
+                        <label><input type="radio" name="q26" value="false"> خطأ</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: صح</div>
+                </div>
+                
+                <!-- السؤال 27 -->
+                <div class="question">
+                    <p><span class="question-number">27</span>. لا يمكن تشغيل ملف صوتي إلا بوجود وسم &lt;controls&gt; داخل وسم &lt;audio&gt;.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q27" value="true"> صح</label>
+                        <label><input type="radio" name="q27" value="false"> خطأ</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: خطأ (يمكن التشغيل تلقائيًا باستخدام autoplay، لكن controls يظهر الأزرار)</div>
+                </div>
+                
+                <!-- السؤال 28 -->
+                <div class="question">
+                    <p><span class="question-number">28</span>. الوسم &lt;s&gt; يُستخدم لحذف نص أو إظهاره كملغي.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q28" value="true"> صح</label>
+                        <label><input type="radio" name="q28" value="false"> خطأ</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: صح</div>
+                </div>
+                
+                <!-- السؤال 29 -->
+                <div class="question">
+                    <p><span class="question-number">29</span>. التاج &lt;strong&gt; يخلّي النص مائل.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q29" value="true"> صح</label>
+                        <label><input type="radio" name="q29" value="false"> خطأ</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: خطأ (يجعل النص غامقًا)</div>
+                </div>
+                
+                <!-- السؤال 30 -->
+                <div class="question">
+                    <p><span class="question-number">30</span>. التاج &lt;audio&gt; ممكن يشغل ملف MP3.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q30" value="true"> صح</label>
+                        <label><input type="radio" name="q30" value="false"> خطأ</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: صح</div>
+                </div>
+                
+                <!-- السؤال 31 -->
+                <div class="question">
+                    <p><span class="question-number">31</span>. التاج &lt;mark&gt; يستخدم لتظليل النص بلون أصفر افتراضي.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q31" value="true"> صح</label>
+                        <label><input type="radio" name="q31" value="false"> خطأ</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: صح</div>
+                </div>
+                
+                <!-- السؤال 32 -->
+                <div class="question">
+                    <p><span class="question-number">32</span>. التاج &lt;head&gt; يحتوي على محتوى الصفحة اللي المستخدم بيشوفه.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q32" value="true"> صح</label>
+                        <label><input type="radio" name="q32" value="false"> خطأ</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: خطأ (يحتوي على معلومات عن الصفحة وليس المحتوى المرئي)</div>
+                </div>
+                
+                <!-- السؤال 33 -->
+                <div class="question">
+                    <p><span class="question-number">33</span>. التاج &lt;h&gt; لوحده كافي لكتابة عنوان.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q33" value="true"> صح</label>
+                        <label><input type="radio" name="q33" value="false"> خطأ</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: خطأ (يجب تحديد المستوى من h1 إلى h6)</div>
+                </div>
+                
+                <!-- السؤال 34 -->
+                <div class="question">
+                    <p><span class="question-number">34</span>. &lt;br&gt; يضيف سطر جديد بدون أي فاصل مرئي.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q34" value="true"> صح</label>
+                        <label><input type="radio" name="q34" value="false"> خطأ</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: صح</div>
+                </div>
+                
+                <!-- السؤال 35 -->
+                <div class="question">
+                    <p><span class="question-number">35</span>. &lt;b&gt; و &lt;strong&gt; نفس الشكل في المتصفح لكن الفرق في المعنى.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q35" value="true"> صح</label>
+                        <label><input type="radio" name="q35" value="false"> خطأ</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: صح</div>
+                </div>
+                
+                <!-- السؤال 36 -->
+                <div class="question">
+                    <p><span class="question-number">36</span>. &lt;sub&gt; و &lt;sup&gt; بيستخدموا لكتابة نصوص مصغرة فوق وتحت السطر.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q36" value="true"> صح</label>
+                        <label><input type="radio" name="q36" value="false"> خطأ</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: صح</div>
+                </div>
+                
+                <!-- السؤال 37 -->
+                <div class="question">
+                    <p><span class="question-number">37</span>. &lt;small&gt; يقلل حجم الخط، لكن مش بيغير مكانه في السطر.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q37" value="true"> صح</label>
+                        <label><input type="radio" name="q37" value="false"> خطأ</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: صح</div>
+                </div>
+                
+                <!-- السؤال 38 -->
+                <div class="question">
+                    <p><span class="question-number">38</span>. &lt;s&gt; بيخلي النص شكله ملغي أو عليه خط.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q38" value="true"> صح</label>
+                        <label><input type="radio" name="q38" value="false"> خطأ</label>
+                    </div>
+                    <div class="correct-answer">الإجابة الصحيحة: صح</div>
+                </div>
+            </div>
+            
+            <button type="button" onclick="checkAnswers()">تصحيح الإجابات</button>
+        </form>
+        
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const correctAnswers = {
+                q1: "b", q2: "b", q3: "b", q4: "b", q5: "c",
+                q6: "d", q7: "c", q8: "b", q9: "d", q10: "b",
+                q11: "c", q12: "b", q13: "c", q14: "c", q15: "b",
+                q16: "d", q17: "b", q18: "b", q19: "d", q20: "c",
+                q21: "true", q22: "false", q23: "false", q24: "true", q25: "false",
+                q26: "true", q27: "false", q28: "true", q29: "false", q30: "true",
+                q31: "true", q32: "false", q33: "false", q34: "true", q35: "true",
+                q36: "true", q37: "true", q38: "true"
+            };
+            
+            let score = 0;
+            const totalQuestions = 38;
+            
+            // إخفاء جميع الإجابات الصحيحة أولاً
+            document.querySelectorAll('.correct-answer').forEach(el => {
+                el.classList.remove('show-answer');
+            });
+            
+            // حساب النقاط
+            for (let i = 1; i <= totalQuestions; i++) {
+                const questionName = 'q' + i;
+                const selectedOption = document.querySelector(`input[name="${questionName}"]:checked`);
+                
+                if (selectedOption) {
+                    if (selectedOption.value === correctAnswers[questionName]) {
+                        score++;
+                    } else {
+                        // عرض الإجابة الصحيحة للأسئلة الخاطئة
+                        document.querySelector(`input[name="${questionName}"]`).closest('.question')
+                            .querySelector('.correct-answer').classList.add('show-answer');
+                    }
+                }
+            }
+            
+            // حساب النسبة المئوية
+            const percentage = Math.round((score / totalQuestions) * 100);
+            
+            // عرض النتيجة
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `
+                <h3>النتيجة النهائية</h3>
+                <p>${score} / ${totalQuestions}</p>
+                <p>${percentage}%</p>
+            `;
+            
+            // تلوين النتيجة حسب الأداء
+            if (percentage >= 75) {
+                resultDiv.className = 'result passed';
+                resultDiv.innerHTML += '<p>ممتاز! أداء رائع</p>';
+            } else if (percentage >= 50) {
+                resultDiv.className = 'result passed';
+                resultDiv.innerHTML += '<p>جيد، لكن يمكنك التحسين</p>';
+            } else {
+                resultDiv.className = 'result failed';
+                resultDiv.innerHTML += '<p>يحتاج إلى تحسين، حاول مرة أخرى</p>';
+            }
+            
+            // التمرير إلى النتيجة
+            resultDiv.scrollIntoView({ behavior: 'smooth' });
+           }
+    </script>
+</body>
+</html>
